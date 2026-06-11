@@ -5,10 +5,9 @@ services:
     build: .
     container_name: bwapp
     restart: unless-stopped
-    # Uncomment bleow lines to make bwapp accesible by localhost:8080
-    # Only use this when needed for debuging.    
-#   ports:
-#     - "8080:80"
+    # Comment port to make bwapp accesible only via reverse proxy
+    ports:
+      - "8080:80"
     volumes:
       - bwapp_data:/var/lib/mysql
 

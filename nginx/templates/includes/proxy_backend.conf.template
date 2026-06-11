@@ -15,6 +15,7 @@ proxy_redirect off;
 
 proxy_pass_header Authorization;
 proxy_pass ${BACKEND};
+proxy_cookie_path / "/; SameSite=Lax";
 
 SET_REAL_IP_FROM
 real_ip_header ${REAL_IP_HEADER};
